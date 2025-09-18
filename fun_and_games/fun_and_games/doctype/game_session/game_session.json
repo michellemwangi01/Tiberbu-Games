@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-01-18 10:00:00.000000",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "session_name",
+  "team_group",
+  "session_date",
+  "status",
+  "section_break_1",
+  "current_question",
+  "question_start_time",
+  "voting_deadline",
+  "section_break_2",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "GS-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "session_name",
+   "fieldtype": "Data",
+   "label": "Session Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "team_group",
+   "fieldtype": "Select",
+   "label": "Team Group",
+   "options": "\nLeadership Track\nBackend Track\nFrontend Track\nCustom",
+   "reqd": 1
+  },
+  {
+   "fieldname": "session_date",
+   "fieldtype": "Date",
+   "label": "Session Date",
+   "default": "Today"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nActive\nCompleted\nCancelled",
+   "default": "Draft",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Current Game State"
+  },
+  {
+   "fieldname": "current_question",
+   "fieldtype": "Link",
+   "label": "Current Question",
+   "options": "Game Question"
+  },
+  {
+   "fieldname": "question_start_time",
+   "fieldtype": "Datetime",
+   "label": "Question Start Time"
+  },
+  {
+   "fieldname": "voting_deadline",
+   "fieldtype": "Datetime",
+   "label": "Voting Deadline"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Fun And Games",
+ "name": "Game Session",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

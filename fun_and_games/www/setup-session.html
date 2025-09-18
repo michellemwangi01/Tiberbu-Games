@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Game Session - TIBERBU</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --primary-light: #dbeafe;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --dark-color: #1f2937;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            
+            --border-radius-sm: 6px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 20px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: var(--gray-800);
+            padding: 16px;
+            line-height: 1.6;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 24px;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .header {
+                margin-bottom: 48px;
+            }
+        }
+
+        .header h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            margin-bottom: 12px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: -0.025em;
+        }
+
+        .header .subtitle {
+            font-size: clamp(16px, 3vw, 20px);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .setup-form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius-xl);
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-xl);
+            margin-bottom: 32px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @media (min-width: 768px) {
+            .setup-form {
+                padding: 40px;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+        }
+
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-section h3 {
+            font-size: clamp(20px, 4vw, 24px);
+            margin-bottom: 24px;
+            color: var(--gray-800);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+        }
+
+        .form-section h3::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), transparent);
+            border-radius: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--gray-700);
+            font-size: 14px;
+            letter-spacing: 0.025em;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius-md);
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--gray-400);
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        @media (min-width: 640px) {
+            .checkbox-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .checkbox-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 16px;
+            background: var(--gray-50);
+            border-radius: var(--border-radius-md);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .checkbox-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .checkbox-item:hover {
+            border-color: var(--primary-color);
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .checkbox-item:hover::before {
+            opacity: 0.05;
+        }
+
+        .checkbox-item * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-right: 12px;
+            margin-top: 2px;
+            transform: scale(1.2);
+            accent-color: var(--primary-color);
+        }
+
+        .checkbox-item label {
+            margin-bottom: 0;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--gray-700);
+        }
+
+        .participant-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .participant-item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: var(--gray-50);
+            border-radius: var(--border-radius-md);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .participant-item:hover {
+            border-color: var(--primary-light);
+            background: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .participant-item input[type="text"] {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 0;
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+
+        .participant-item select {
+            width: auto;
+            min-width: 140px;
+            margin-bottom: 0;
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 640px) {
+            .participant-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .participant-item input[type="text"],
+            .participant-item select {
+                min-width: unset;
+                width: 100%;
+            }
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: inherit;
+            letter-spacing: 0.025em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--gray-500);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-600);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-add {
+            background: linear-gradient(135deg, var(--success-color), #059669);
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn-add:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-remove {
+            background: linear-gradient(135deg, var(--danger-color), #dc2626);
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .btn-remove:hover {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .actions {
+                flex-direction: column;
+            }
+            
+            .actions .btn {
+                width: 100%;
+            }
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid var(--gray-200);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading p {
+            color: var(--gray-600);
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .success-message, .error-message {
+            padding: 16px 20px;
+            border-radius: var(--border-radius-md);
+            margin-bottom: 24px;
+            font-weight: 500;
+            font-size: 14px;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message {
+            background: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .error-message {
+            background: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        .section-description {
+            color: var(--gray-500);
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Enhanced mobile responsiveness */
+        @media (max-width: 640px) {
+            .setup-form {
+                padding: 20px;
+                margin: 0 8px 24px;
+            }
+            
+            .form-section h3 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 12px 14px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+            
+            .checkbox-item {
+                padding: 14px;
+            }
+            
+            .checkbox-item label {
+                font-size: 13px;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        .btn:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        .checkbox-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Setup TIBERBU Game Session</h1>
+            <p class="subtitle">Configure a new team voting session with style</p>
+        </div>
+
+        <div id="message-area"></div>
+
+        <form id="session-form" class="setup-form">
+            <!-- Session Details -->
+            <div class="form-section">
+                <h3>📋 Session Details</h3>
+                <div class="form-group">
+                    <label for="session_name">Session Name *</label>
+                    <input type="text" id="session_name" name="session_name" required 
+                           placeholder="e.g., Leadership Track - December 2024">
+                </div>
+                <div class="form-group">
+                    <label for="team_group">Team Group *</label>
+                    <select id="team_group" name="team_group" required>
+                        <option value="">Select Team Group</option>
+                        <option value="Leadership Track">Leadership Track</option>
+                        <option value="Backend Track">Backend Track</option>
+                        <option value="Frontend Track">Frontend Track</option>
+                        <option value="Custom">Custom</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="3" 
+                              placeholder="Optional description for this session"></textarea>
+                </div>
+            </div>
+
+            <!-- Question Selection -->
+            <div class="form-section">
+                <h3>❓ Select Questions</h3>
+                <p class="section-description">Choose which questions to include in this session:</p>
+                <div class="checkbox-grid" id="questions-list">
+                    <!-- Questions will be loaded via JavaScript -->
+                    <div class="loading-message">Loading questions...</div>
+                </div>
+            </div>
+
+            <!-- Participant Management -->
+            <div class="form-section">
+                <h3>👥 Session Participants</h3>
+                <p class="section-description">Add participants for this session:</p>
+                <button type="button" class="btn btn-add" onclick="addParticipant()">+ Add Participant</button>
+                <div class="participant-list" id="participants-list">
+                    <!-- Participants will be added here dynamically -->
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/admin'">Cancel</button>
+                <button type="submit" class="btn btn-primary">Create Session</button>
+            </div>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Creating session...</p>
+        </div>
+    </div>
+
+    <script>
+        let participantCounter = 0;
+
+        function addParticipant(name = '', team = '') {
+            participantCounter++;
+            const participantsList = document.getElementById('participants-list');
+            
+            const participantDiv = document.createElement('div');
+            participantDiv.className = 'participant-item';
+            participantDiv.innerHTML = `
+                <input type="text" name="participant_names[]" placeholder="Participant Name" value="${name}" required>
+                <select name="participant_teams[]" required>
+                    <option value="">Select Team</option>
+                    <option value="Management" ${team === 'Management' ? 'selected' : ''}>Management</option>
+                    <option value="Backend" ${team === 'Backend' ? 'selected' : ''}>Backend</option>
+                    <option value="Frontend" ${team === 'Frontend' ? 'selected' : ''}>Frontend</option>
+                    <option value="UI/UX" ${team === 'UI/UX' ? 'selected' : ''}>UI/UX</option>
+                    <option value="Scrum" ${team === 'Scrum' ? 'selected' : ''}>Scrum</option>
+                    <option value="DevOps" ${team === 'DevOps' ? 'selected' : ''}>DevOps</option>
+                    <option value="Security" ${team === 'Security' ? 'selected' : ''}>Security</option>
+                    <option value="QA" ${team === 'QA' ? 'selected' : ''}>QA</option>
+                </select>
+                <button type="button" class="btn-remove" onclick="this.parentElement.remove()">Remove</button>
+            `;
+            
+            participantsList.appendChild(participantDiv);
+        }
+
+        // Load questions from API
+        async function loadQuestions() {
+            try {
+                const response = await fetch('/api/method/fun_and_games.fun_and_games.api.get_questions_from_settings');
+                const data = await response.json();
+
+                if (data.message && data.message.questions) {
+                    const questions = data.message.questions;
+                    const questionsContainer = document.getElementById('questions-list');
+                    questionsContainer.innerHTML = ''; // Clear loading message
+
+                    questions.forEach(question => {
+                        const checkboxDiv = document.createElement('div');
+                        checkboxDiv.className = 'checkbox-item';
+
+                        checkboxDiv.innerHTML = `
+                            <input type="checkbox"
+                                id="q_${question.name}"
+                                name="questions"
+                                value="${question.name}"
+                                data-leadership="${question.for_leadership_track || 0}"
+                                data-backend="${question.for_backend_track || 0}"
+                                data-frontend="${question.for_frontend_track || 0}"
+                                data-custom="${question.for_custom_sessions || 0}">
+                            <label for="q_${question.name}">${question.question_text}</label>
+                        `;
+
+                        questionsContainer.appendChild(checkboxDiv);
+                    });
+                } else {
+                    document.getElementById('questions-list').innerHTML = '<div class="error-message">Failed to load questions</div>';
+                }
+            } catch (error) {
+                console.error('Error loading questions:', error);
+                document.getElementById('questions-list').innerHTML = '<div class="error-message">Error loading questions</div>';
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load questions first
+            loadQuestions();
+
+            // Add empty participant fields
+            for (let i = 0; i < 3; i++) {
+                addParticipant();
+            }
+        });
+
+        document.getElementById('session-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const sessionData = {
+                session_name: formData.get('session_name'),
+                team_group: formData.get('team_group'),
+                description: formData.get('description'),
+                questions: formData.getAll('questions'),
+                participants: []
+            };
+
+            // Collect participants
+            const participantNames = formData.getAll('participant_names[]');
+            const participantTeams = formData.getAll('participant_teams[]');
+            
+            for (let i = 0; i < participantNames.length; i++) {
+                if (participantNames[i].trim() && participantTeams[i]) {
+                    sessionData.participants.push({
+                        name: participantNames[i].trim(),
+                        team: participantTeams[i]
+                    });
+                }
+            }
+
+            // Validate
+            if (!sessionData.session_name || !sessionData.team_group) {
+                showMessage('Please fill in all required fields', 'error');
+                return;
+            }
+
+            if (sessionData.questions.length === 0) {
+                showMessage('Please select at least one question', 'error');
+                return;
+            }
+
+            if (sessionData.participants.length === 0) {
+                showMessage('Please add at least one participant', 'error');
+                return;
+            }
+
+            // Show loading
+            document.getElementById('session-form').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+
+            try {
+                const response = await fetch('/api/method/fun_and_games.fun_and_games.api.create_session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(sessionData)
+                });
+
+                const result = await response.json();
+
+                if (result.message && result.message.success) {
+                    showMessage('Session created successfully! Redirecting to admin panel...', 'success');
+                    setTimeout(() => {
+                        window.location.href = '/admin';
+                    }, 2000);
+                } else {
+                    throw new Error(result.message?.message || 'Failed to create session');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showMessage('Error creating session: ' + error.message, 'error');
+                document.getElementById('session-form').style.display = 'block';
+                document.getElementById('loading').style.display = 'none';
+            }
+        });
+
+        function showMessage(message, type) {
+            const messageArea = document.getElementById('message-area');
+            messageArea.innerHTML = `<div class="${type}-message">${message}</div>`;
+            messageArea.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Auto-select questions based on team group
+        document.getElementById('team_group').addEventListener('change', function() {
+            const teamGroup = this.value;
+            const checkboxes = document.querySelectorAll('input[name="questions"]');
+            
+            checkboxes.forEach(checkbox => {
+                let shouldCheck = false;
+                
+                if (teamGroup === 'Leadership Track' && checkbox.getAttribute('data-leadership') === '1') {
+                    shouldCheck = true;
+                }
+                if (teamGroup === 'Backend Track' && checkbox.getAttribute('data-backend') === '1') {
+                    shouldCheck = true;
+                }
+                if (teamGroup === 'Frontend Track' && checkbox.getAttribute('data-frontend') === '1') {
+                    shouldCheck = true;
+                }
+                if (teamGroup === 'Custom' && checkbox.getAttribute('data-custom') === '1') {
+                    shouldCheck = true;
+                }
+                
+                checkbox.checked = shouldCheck;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voting Button States Test</title>
+    <style>
+        .participant-btn {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 18px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            display: block;
+        }
+
+        .participant-btn.voting {
+            background: #dc2626;
+            color: white;
+            border-color: #dc2626;
+        }
+
+        .participant-btn.voted {
+            background: #16a34a;
+            color: white;
+            border-color: #16a34a;
+        }
+
+        .participant-btn.voted:disabled {
+            background: #16a34a;
+            color: white;
+            border-color: #16a34a;
+            opacity: 1;
+            cursor: not-allowed;
+        }
+
+        .participant-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voting Button States Test</h1>
+    
+    <div id="message-area"></div>
+    
+    <button class="participant-btn" onclick="simulateVote(this)">John Doe</button>
+    <button class="participant-btn" onclick="simulateVote(this)">Jane Smith</button>
+    <button class="participant-btn" onclick="simulateVote(this)">Bob Wilson</button>
+    
+    <br><br>
+    <button onclick="resetButtons()">Reset All Buttons</button>
+    
+    <script>
+        function simulateVote(button) {
+            // Show voting state
+            button.classList.add('voting');
+            button.textContent = 'Voting...';
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                // Show voted state
+                button.classList.remove('voting');
+                button.classList.add('voted');
+                button.textContent = '✓ Voted';
+                button.disabled = true;
+                
+                // Disable all other buttons
+                const allButtons = document.querySelectorAll('.participant-btn');
+                allButtons.forEach(btn => {
+                    if (btn !== button) {
+                        btn.disabled = true;
+                    }
+                });
+                
+                document.getElementById('message-area').innerHTML = 
+                    '<div style="color: green;">🎉 Vote submitted successfully!</div>';
+            }, 1000);
+        }
+        
+        function resetButtons() {
+            const allButtons = document.querySelectorAll('.participant-btn');
+            allButtons.forEach(btn => {
+                btn.classList.remove('voting', 'voted');
+                btn.disabled = false;
+                btn.textContent = btn.textContent.replace('✓ Voted', '').replace('Voting...', '').trim();
+                if (!btn.textContent) {
+                    // Restore original names
+                    const names = ['John Doe', 'Jane Smith', 'Bob Wilson'];
+                    btn.textContent = names[Array.from(allButtons).indexOf(btn)];
+                }
+            });
+            document.getElementById('message-area').innerHTML = '';
+        }
+    </script>
+</body>
+</html>

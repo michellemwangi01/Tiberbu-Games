@@ -1,0 +1,804 @@
+[
+  {
+    "question_text": "Who is most likely to have a mechanical keyboard that can be heard from space?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to have more GitHub repos than friends?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to name their pet after a programming language?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to argue that their bug is actually a feature?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to have their IDE theme darker than their soul?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to solve problems while in the shower?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to have memorized more keyboard shortcuts than phone numbers?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to dream in code?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to explain their weekend plans using technical jargon?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to have a collection of rubber ducks on their desk?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to work through lunch without noticing?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Work Habits"
+  },
+  {
+    "question_text": "Who is most likely to have 47 browser tabs open at once?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Work Habits"
+  },
+  {
+    "question_text": "Who is most likely to organize their code like they organize their life?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Work Habits"
+  },
+  {
+    "question_text": "Who is most likely to arrive early and stay late without being asked?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Work Habits"
+  },
+  {
+    "question_text": "Who is most likely to have the cleanest, most organized workspace?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Work Habits"
+  },
+  {
+    "question_text": "Who is most likely to volunteer for the project no one else wants?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to give the best code reviews?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to help a teammate debug at 2 AM?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to remember everyone's birthdays?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to send the most detailed status updates?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to know every keyboard shortcut in existence?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Technical"
+  },
+  {
+    "question_text": "Who is most likely to debug production issues in their sleep?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Technical"
+  },
+  {
+    "question_text": "Who is most likely to have read the entire documentation?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Technical"
+  },
+  {
+    "question_text": "Who is most likely to find the root cause of any bug in 5 minutes?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Technical"
+  },
+  {
+    "question_text": "Who is most likely to have strong opinions about code formatting?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Technical"
+  },
+  {
+    "question_text": "Who is most likely to write the most creative variable names?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Creative"
+  },
+  {
+    "question_text": "Who is most likely to find the most unique solution to any problem?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Creative"
+  },
+  {
+    "question_text": "Who is most likely to design the coolest user interfaces?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 0,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Creative"
+  },
+  {
+    "question_text": "Who is most likely to come up with the best project names?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Creative"
+  },
+  {
+    "question_text": "Who is most likely to turn any boring task into something fun?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Creative"
+  },
+  {
+    "question_text": "Who is most likely to be the team's unofficial therapist?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Personality"
+  },
+  {
+    "question_text": "Who is most likely to make everyone laugh during stressful moments?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Personality"
+  },
+  {
+    "question_text": "Who is most likely to be overly polite in code review comments?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Personality"
+  },
+  {
+    "question_text": "Who is most likely to be the most competitive about everything?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Personality"
+  },
+  {
+    "question_text": "Who is most likely to stay calm under pressure?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Personality"
+  },
+  {
+    "question_text": "Who is most likely to take charge when things go wrong?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Leadership"
+  },
+  {
+    "question_text": "Who is most likely to mentor new team members?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Leadership"
+  },
+  {
+    "question_text": "Who is most likely to make the tough decisions nobody else wants to make?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Leadership"
+  },
+  {
+    "question_text": "Who is most likely to inspire others to do their best work?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Leadership"
+  },
+  {
+    "question_text": "Who is most likely to delegate tasks effectively?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Leadership"
+  },
+  {
+    "question_text": "Who is most likely to drop everything to help a teammate?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Teamwork"
+  },
+  {
+    "question_text": "Who is most likely to remember what everyone is working on?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Teamwork"
+  },
+  {
+    "question_text": "Who is most likely to organize team social events?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Teamwork"
+  },
+  {
+    "question_text": "Who is most likely to be the team's biggest cheerleader?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Teamwork"
+  },
+  {
+    "question_text": "Who is most likely to mediate conflicts between teammates?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Teamwork"
+  },
+  {
+    "question_text": "Who is most likely to have the most aesthetically pleasing workspace?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to judge fonts like wine?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 0,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to notice when something is 1 pixel off?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 0,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to have strong opinions about button corner radius?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 0,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to own the most design books?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 0,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to redesign everything they touch?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 0,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Creative"
+  },
+  {
+    "question_text": "Who is most likely to create the most user-friendly solutions?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Creative"
+  },
+  {
+    "question_text": "Who is most likely to think outside the box for problem solving?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Creative"
+  },
+  {
+    "question_text": "Who is most likely to have the best color sense?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 0,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Creative"
+  },
+  {
+    "question_text": "Who is most likely to create the most innovative prototypes?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 0,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Creative"
+  },
+  {
+    "question_text": "Who is most likely to advocate most for user needs?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 0,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to give the most constructive feedback?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to ask the right questions in meetings?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to deliver work ahead of deadlines?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to keep everyone informed about project progress?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to master every design tool?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 0,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Technical"
+  },
+  {
+    "question_text": "Who is most likely to know all the accessibility guidelines by heart?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Technical"
+  },
+  {
+    "question_text": "Who is most likely to optimize everything for performance?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Technical"
+  },
+  {
+    "question_text": "Who is most likely to keep up with all the latest industry trends?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Technical"
+  },
+  {
+    "question_text": "Who is most likely to research every detail before starting work?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Technical"
+  },
+  {
+    "question_text": "Who is most likely to be the team's mood booster?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Personality"
+  },
+  {
+    "question_text": "Who is most likely to be the most patient person on the team?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Personality"
+  },
+  {
+    "question_text": "Who is most likely to be the most detail-oriented?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Personality"
+  },
+  {
+    "question_text": "Who is most likely to see the big picture in any situation?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Personality"
+  },
+  {
+    "question_text": "Who is most likely to be the most empathetic team member?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Personality"
+  },
+  {
+    "question_text": "Who is most likely to step up as project lead when needed?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Leadership"
+  },
+  {
+    "question_text": "Who is most likely to keep everyone motivated during crunch time?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Leadership"
+  },
+  {
+    "question_text": "Who is most likely to make sure everyone's voice is heard?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Leadership"
+  },
+  {
+    "question_text": "Who is most likely to facilitate the best brainstorming sessions?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Leadership"
+  },
+  {
+    "question_text": "Who is most likely to set realistic expectations for projects?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Leadership"
+  },
+  {
+    "question_text": "Who is most likely to share knowledge and resources with everyone?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Teamwork"
+  },
+  {
+    "question_text": "Who is most likely to bridge communication gaps between departments?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Teamwork"
+  },
+  {
+    "question_text": "Who is most likely to celebrate team wins the most enthusiastically?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Teamwork"
+  },
+  {
+    "question_text": "Who is most likely to collaborate best across different teams?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Teamwork"
+  },
+  {
+    "question_text": "Who is most likely to include everyone in team activities?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Teamwork"
+  },
+  {
+    "question_text": "Who is most likely to have the most organized project files?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Work Habits"
+  },
+  {
+    "question_text": "Who is most likely to take the most detailed meeting notes?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Work Habits"
+  },
+  {
+    "question_text": "Who is most likely to have the best time management skills?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Work Habits"
+  },
+  {
+    "question_text": "Who is most likely to work best under tight deadlines?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Work Habits"
+  },
+  {
+    "question_text": "Who is most likely to double-check everything before submitting?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Work Habits"
+  },
+  {
+    "question_text": "Who is most likely to have the newest gadgets and tools?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to give the best presentations?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to find inspiration in the most unexpected places?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Creative"
+  },
+  {
+    "question_text": "Who is most likely to have the best portfolio or showcase?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Professional"
+  }
+
+]

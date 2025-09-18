@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-01-18 10:00:00",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "question_text",
+  "category",
+  "is_active",
+  "section_break_1",
+  "for_leadership_track",
+  "for_backend_track",
+  "for_frontend_track",
+  "for_custom_sessions"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "GQ-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "question_text",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Question Text",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "\nFun\nProfessional\nTechnical\nPersonality\nLeadership\nTeamwork\nCreative\nWork Habits"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Session Assignment"
+  },
+  {
+   "default": "1",
+   "fieldname": "for_leadership_track",
+   "fieldtype": "Check",
+   "label": "For Leadership Track"
+  },
+  {
+   "default": "1",
+   "fieldname": "for_backend_track",
+   "fieldtype": "Check",
+   "label": "For Backend Track"
+  },
+  {
+   "default": "1",
+   "fieldname": "for_frontend_track",
+   "fieldtype": "Check",
+   "label": "For Frontend Track"
+  },
+  {
+   "default": "1",
+   "fieldname": "for_custom_sessions",
+   "fieldtype": "Check",
+   "label": "For Custom Sessions"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-18 22:14:50.805720",
+ "modified_by": "Administrator",
+ "module": "Fun and Games",
+ "name": "Game Question",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

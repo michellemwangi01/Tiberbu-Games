@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIBERBU Voting Game</title>
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #1e293b;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+            border-radius: 2px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 12px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #64748b;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .timer-display {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: white;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 24px;
+            font-family: 'Courier New', monospace;
+            box-shadow: 0 8px 25px rgba(30, 41, 59, 0.3);
+        }
+
+        .timer-display.warning {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+        }
+
+        .timer-display.expired {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .timer-display .time {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .timer-display .label {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .question-card {
+            background: linear-gradient(135deg, #fefefe, #f8fafc);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .question-text {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #1e293b;
+        }
+
+        .participants-grid {
+            display: grid;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .participant-btn {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border: none;
+            border-radius: 14px;
+            padding: 20px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .participant-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .participant-btn:hover {
+            background: linear-gradient(135deg, #fef2f2, #ffffff);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.12);
+        }
+
+        .participant-btn:hover::before {
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+        }
+
+        .participant-btn:active {
+            transform: translateY(0);
+        }
+
+        .participant-btn.voting {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .participant-btn.voted {
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+            box-shadow: 0 8px 25px rgba(22, 163, 74, 0.3);
+        }
+
+        .participant-btn.voted::before {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .participant-btn.voted:disabled {
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+            opacity: 1;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .participant-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px 20px;
+            color: #64748b;
+        }
+
+        .spinner {
+            width: 44px;
+            height: 44px;
+            border: 3px solid #e2e8f0;
+            border-top: 3px solid #dc2626;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 24px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .message {
+            text-align: center;
+            padding: 20px 24px;
+            border-radius: 14px;
+            margin-bottom: 24px;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .message.success {
+            background: linear-gradient(135deg, #dcfce7, #f0fdf4);
+            color: #166534;
+        }
+
+        .message.error {
+            background: linear-gradient(135deg, #fef2f2, #fefefe);
+            color: #dc2626;
+        }
+
+        .message.info {
+            background: linear-gradient(135deg, #dbeafe, #f0f9ff);
+            color: #1e40af;
+        }
+
+        .message.warning {
+            background: linear-gradient(135deg, #fef3c7, #fffbeb);
+            color: #d97706;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 14px 28px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+            box-shadow: 0 4px 16px rgba(220, 38, 38, 0.3);
+        }
+        
+        .refresh-btn:hover {
+            background: linear-gradient(135deg, #b91c1c, #dc2626);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 25px 20px;
+            }
+            
+            .question-card {
+                padding: 24px 20px;
+            }
+            
+            .participant-btn {
+                padding: 18px 20px;
+                font-size: 15px;
+            }
+
+            .container {
+                border-radius: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 TIBERBU Games</h1>
+            <p>Cast your vote for the current question</p>
+        </div>
+        
+        <div class="content">
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading question...</p>
+            </div>
+            
+            <div id="game-content" style="display: none;">
+                <div id="message-area"></div>
+
+                <!-- Timer Display -->
+                <div id="timer-section" style="display: none;">
+                    <div class="timer-display" id="timer-display">
+                        <div class="time" id="timer-time">00:00</div>
+                        <div class="label" id="timer-label">Time Remaining</div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-text" id="question-text"></div>
+                </div>
+
+                <div class="participants-grid" id="participants-grid"></div>
+
+                <div style="text-align: center;">
+                    <button class="refresh-btn" onclick="loadQuestion()">🔄 Refresh Question</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = null;
+        let hasVoted = false;
+        let timerInterval = null;
+        let votingClosed = false;
+        let lastQuestionId = null;
+        let expiredMessageShown = false;
+
+        function showMessage(message, type = 'info') {
+            const messageArea = document.getElementById('message-area');
+            messageArea.innerHTML = `<div class="message ${type}">${message}</div>`;
+
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageArea.innerHTML = '';
+                }, 3000);
+            }
+        }
+
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('game-content').style.display = 'none';
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('game-content').style.display = 'block';
+        }
+
+        async function loadQuestion() {
+            showLoading();
+
+            try {
+                const response = await fetch('/api/method/fun_and_games.fun_and_games.api.get_active_session');
+                const data = await response.json();
+
+                if (data.message && data.message.success) {
+                    if (data.message.question) {
+                        // Check if this is a new question
+                        const isNewQuestion = lastQuestionId !== data.message.question.name;
+
+                        if (isNewQuestion) {
+                            // Reset state for new question
+                            lastQuestionId = data.message.question.name;
+                            expiredMessageShown = false;
+                            hasVoted = false;
+                            votingClosed = false;
+                        }
+
+                        currentQuestion = data.message.question;
+                        votingClosed = !data.message.voting_open;
+                        displayQuestion(data.message.question, data.message.participants);
+                        startTimer(data.message.time_remaining);
+                        await checkVoteStatus();
+                    } else {
+                        showMessage('No question is currently active. Please wait for the game master to start a question.', 'info');
+                        stopTimer();
+                        lastQuestionId = null;
+                        expiredMessageShown = false;
+                    }
+                } else {
+                    showMessage('No active session found. Please wait for the game to start.', 'info');
+                    stopTimer();
+                    lastQuestionId = null;
+                    expiredMessageShown = false;
+                }
+            } catch (error) {
+                console.error('Error loading question:', error);
+                showMessage('Failed to load question. Please try again.', 'error');
+            }
+
+            hideLoading();
+        }
+
+        function startTimer(timeRemaining) {
+            // Always stop any existing timer first
+            stopTimer();
+
+            if (timeRemaining <= 0) {
+                votingClosed = true;
+                disableVoting();
+                if (!expiredMessageShown) {
+                    showMessage('Voting time has expired!', 'warning');
+                    expiredMessageShown = true;
+                }
+                return;
+            }
+
+            document.getElementById('timer-section').style.display = 'block';
+
+            function updateTimer() {
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                const timeDisplay = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                document.getElementById('timer-time').textContent = timeDisplay;
+
+                const timerDisplay = document.getElementById('timer-display');
+                if (timeRemaining <= 10) {
+                    timerDisplay.classList.add('expired');
+                    document.getElementById('timer-label').textContent = 'Time Almost Up!';
+                } else if (timeRemaining <= 30) {
+                    timerDisplay.classList.add('warning');
+                    timerDisplay.classList.remove('expired');
+                    document.getElementById('timer-label').textContent = 'Hurry Up!';
+                } else {
+                    timerDisplay.classList.remove('warning', 'expired');
+                    document.getElementById('timer-label').textContent = 'Time Remaining';
+                }
+
+                if (timeRemaining <= 0) {
+                    stopTimer();
+                    votingClosed = true;
+                    disableVoting();
+                    if (!expiredMessageShown) {
+                        showMessage('Voting time has expired!', 'warning');
+                        expiredMessageShown = true;
+                    }
+                    return;
+                }
+
+                timeRemaining--;
+            }
+
+            updateTimer();
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+            document.getElementById('timer-section').style.display = 'none';
+        }
+
+        function disableVoting() {
+            const buttons = document.querySelectorAll('.participant-btn');
+            buttons.forEach(button => {
+                button.disabled = true;
+            });
+        }
+
+        function displayQuestion(question, participants) {
+            document.getElementById('question-text').textContent = question.question_text;
+
+            const grid = document.getElementById('participants-grid');
+            grid.innerHTML = '';
+
+            participants.forEach(participant => {
+                const button = document.createElement('button');
+                button.className = 'participant-btn';
+                button.textContent = participant.participant_name;
+                button.onclick = () => submitVote(participant.name);
+                button.dataset.participantId = participant.name;
+                button.disabled = votingClosed;
+
+                // Store original text for potential restoration
+                button.dataset.originalText = participant.participant_name;
+
+                grid.appendChild(button);
+            });
+        }
+
+        async function checkVoteStatus() {
+            if (!currentQuestion) return;
+
+            try {
+                const response = await fetch('/api/method/fun_and_games.fun_and_games.api.check_vote_status', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        question: currentQuestion.name
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.message && data.message.success && data.message.has_voted) {
+                    hasVoted = true;
+                    showMessage('✅ You have already voted for this question!', 'info');
+
+                    // Highlight the voted participant
+                    if (data.message.voted_participant) {
+                        const votedButton = document.querySelector(`[data-participant-id="${data.message.voted_participant}"]`);
+                        if (votedButton) {
+                            votedButton.classList.add('voted');
+                            votedButton.textContent = '✓ Voted';
+                        }
+                    }
+
+                    disableVoting();
+                } else {
+                    hasVoted = false;
+                }
+            } catch (error) {
+                console.error('Error checking vote status:', error);
+            }
+        }
+
+        async function submitVote(participantId) {
+            if (hasVoted) {
+                showMessage('You have already voted for this question!', 'error');
+                return;
+            }
+
+            if (votingClosed) {
+                showMessage('Voting is closed for this question!', 'error');
+                return;
+            }
+
+            const button = document.querySelector(`[data-participant-id="${participantId}"]`);
+            button.classList.add('voting');
+            button.textContent = 'Voting...';
+
+            try {
+                const response = await fetch('/api/method/fun_and_games.fun_and_games.api.submit_vote', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        participant: participantId
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.message && data.message.success) {
+                    hasVoted = true;
+                    showMessage('🎉 Vote submitted successfully!', 'success');
+
+                    // Update the voted button to show "Voted ✓"
+                    button.classList.remove('voting');
+                    button.classList.add('voted');
+                    button.textContent = '✓ Voted';
+                    button.disabled = true;
+
+                    // Disable all other buttons
+                    disableVoting();
+                } else {
+                    showMessage(data.message?.message || 'Failed to submit vote', 'error');
+                    button.classList.remove('voting');
+                    button.textContent = button.dataset.originalText;
+                }
+            } catch (error) {
+                console.error('Error submitting vote:', error);
+                showMessage('Failed to submit vote. Please try again.', 'error');
+                button.classList.remove('voting');
+                button.textContent = button.dataset.originalText;
+            }
+        }
+
+        // Load question on page load
+        document.addEventListener('DOMContentLoaded', loadQuestion);
+        
+        // Auto-refresh every 30 seconds to check for new questions
+        setInterval(loadQuestion, 30000);
+    </script>
+</body>
+</html>
+

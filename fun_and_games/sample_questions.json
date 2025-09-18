@@ -1,0 +1,82 @@
+[
+  {
+    "question_text": "Who is most likely to work late to finish a project?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1
+  },
+  {
+    "question_text": "Who is most likely to debug code on weekends?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1
+  },
+  {
+    "question_text": "Who is most likely to suggest team building activities?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1
+  },
+  {
+    "question_text": "Who is most likely to optimize database queries?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 0,
+    "for_custom_sessions": 1
+  },
+  {
+    "question_text": "Who is most likely to create the most user-friendly interface?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 0,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1
+  },
+  {
+    "question_text": "Who is most likely to lead a difficult client meeting?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 0,
+    "for_frontend_track": 0,
+    "for_custom_sessions": 1
+  },
+  {
+    "question_text": "Who is most likely to have the cleanest code?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1
+  },
+  {
+    "question_text": "Who is most likely to remember everyone's birthday?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1
+  },
+  {
+    "question_text": "Who is most likely to find a creative solution to a complex problem?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1
+  },
+  {
+    "question_text": "Who is most likely to catch bugs before they reach production?",
+    "is_active": 1,
+    "for_leadership_track": 0,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1
+  }
+]

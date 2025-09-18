@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timer Fix Test</title>
+</head>
+<body>
+    <div id="timer-section">
+        <div id="timer-display">
+            <div id="timer-time">00:00</div>
+            <div id="timer-label">Time Remaining</div>
+        </div>
+    </div>
+    
+    <div id="message-area"></div>
+    
+    <button onclick="testTimer(10)">Test 10 Second Timer</button>
+    <button onclick="testTimer(5)">Test 5 Second Timer</button>
+    <button onclick="testNewQuestion()">Simulate New Question</button>
+    
+    <script>
+        let timerInterval = null;
+        let expiredMessageShown = false;
+        let lastQuestionId = null;
+        
+        function showMessage(message, type = 'info') {
+            document.getElementById('message-area').innerHTML = `<div style="color: ${type === 'warning' ? 'orange' : 'blue'}">${message}</div>`;
+        }
+        
+        function startTimer(timeRemaining) {
+            // Always stop any existing timer first
+            stopTimer();
+            
+            if (timeRemaining <= 0) {
+                if (!expiredMessageShown) {
+                    showMessage('Voting time has expired!', 'warning');
+                    expiredMessageShown = true;
+                }
+                return;
+            }
+
+            document.getElementById('timer-section').style.display = 'block';
+
+            function updateTimer() {
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                const timeDisplay = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                document.getElementById('timer-time').textContent = timeDisplay;
+
+                const timerDisplay = document.getElementById('timer-display');
+                if (timeRemaining <= 10) {
+                    timerDisplay.style.background = '#dc2626';
+                    document.getElementById('timer-label').textContent = 'Time Almost Up!';
+                } else {
+                    timerDisplay.style.background = '#1a1a1a';
+                    document.getElementById('timer-label').textContent = 'Time Remaining';
+                }
+
+                if (timeRemaining <= 0) {
+                    stopTimer();
+                    if (!expiredMessageShown) {
+                        showMessage('Voting time has expired!', 'warning');
+                        expiredMessageShown = true;
+                    }
+                    return;
+                }
+
+                timeRemaining--;
+            }
+
+            updateTimer();
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+        
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        }
+        
+        function testTimer(seconds) {
+            console.log(`Testing ${seconds} second timer`);
+            startTimer(seconds);
+        }
+        
+        function testNewQuestion() {
+            // Simulate new question - should reset expired message
+            expiredMessageShown = false;
+            showMessage('New question loaded!', 'info');
+            startTimer(8);
+        }
+    </script>
+</body>
+</html>
