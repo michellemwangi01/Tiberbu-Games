@@ -515,6 +515,12 @@
                         <button class="btn btn-warning" onclick="resetSessionVotes()">
                             🔄 Reset Session Votes
                         </button>
+                        <button class="btn btn-danger" onclick="resetEntireSession()" style="margin-left: 10px;">
+                            🔄 Reset Entire Session
+                        </button>
+                        <button class="btn btn-info" onclick="manageParticipants()" style="margin-left: 10px;">
+                            👥 Manage Participants
+                        </button>
                     </div>
                 </div>
 
@@ -539,6 +545,23 @@
             <button class="btn btn-secondary" onclick="refreshData()">
                 🔄 Refresh All Data
             </button>
+        </div>
+    </div>
+
+    <!-- Participant Management Modal -->
+    <div id="participant-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 12px; width: 90%; max-width: 600px; max-height: 80%; overflow-y: auto;">
+            <h3>👥 Manage Session Participants</h3>
+            <div id="participants-list" style="margin: 20px 0;">
+                <!-- Participants will be loaded here -->
+            </div>
+            <div style="margin: 20px 0;">
+                <button class="btn btn-primary" onclick="addParticipantRow()">+ Add Participant</button>
+            </div>
+            <div style="text-align: right; margin-top: 20px;">
+                <button class="btn btn-secondary" onclick="closeParticipantModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveParticipants()" style="margin-left: 10px;">Save Changes</button>
+            </div>
         </div>
     </div>
 
@@ -594,6 +617,7 @@
                     <div class="session-actions">
                         ${session.status === 'Draft' ? `<button class="btn btn-success" onclick="startSession('${session.name}')">Start</button>` : ''}
                         ${session.status === 'Active' ? `<button class="btn btn-warning" onclick="loadSessionQuestions('${session.name}')">Control</button>` : ''}
+                        ${session.status === 'Completed' ? `<button class="btn btn-primary" onclick="playAgain('${session.name}')">🔄 Play Again</button>` : ''}
                         <button class="btn btn-secondary" onclick="viewSessionResults('${session.name}')">Results</button>
                     </div>
                 `;
@@ -629,6 +653,35 @@
             } catch (error) {
                 console.error('Error starting session:', error);
                 showMessage('Failed to start session', 'error');
+            }
+        }
+
+        async function playAgain(sessionId) {
+            if (!confirm('This will reset all votes and reactivate the session. Are you sure?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/method/fun_and_games.fun_and_games.api.reactivate_session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ session_id: sessionId })
+                });
+
+                const data = await response.json();
+
+                if (data.message && data.message.success) {
+                    showMessage('Session reactivated successfully!', 'success');
+                    loadSessions();
+                    loadActiveSession();
+                } else {
+                    showMessage(data.message?.message || 'Failed to reactivate session', 'error');
+                }
+            } catch (error) {
+                console.error('Error reactivating session:', error);
+                showMessage('Failed to reactivate session', 'error');
             }
         }
 
@@ -837,12 +890,186 @@
             }
         }
 
+        async function resetEntireSession() {
+            if (!activeSession) {
+                showMessage('No active session', 'error');
+                return;
+            }
+
+            if (!confirm('Reset entire session? This will clear all votes and reset the current question. This cannot be undone!')) {
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/method/fun_and_games.fun_and_games.api.reset_entire_session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ session_id: activeSession.name })
+                });
+
+                const data = await response.json();
+
+                if (data.message && data.message.success) {
+                    showMessage('Session reset successfully!', 'success');
+                    loadActiveSession(); // Refresh the session data
+                } else {
+                    showMessage(data.message?.message || 'Failed to reset session', 'error');
+                }
+            } catch (error) {
+                console.error('Error resetting session:', error);
+                showMessage('Failed to reset session', 'error');
+            }
+        }
+
         function viewSessionResults(sessionId) {
             window.open(`/summary?session=${sessionId}`, '_blank');
         }
 
         function openVotingPage() {
             window.open('/vote', '_blank');
+        }
+
+        async function manageParticipants() {
+            if (!activeSession) {
+                showMessage('No active session', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/method/fun_and_games.fun_and_games.api.get_session_participants', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ session_id: activeSession.name })
+                });
+
+                const data = await response.json();
+
+                if (data.message && data.message.success) {
+                    displayParticipants(data.message.participants);
+                    document.getElementById('participant-modal').style.display = 'block';
+                } else {
+                    showMessage('Failed to load participants', 'error');
+                }
+            } catch (error) {
+                console.error('Error loading participants:', error);
+                showMessage('Failed to load participants', 'error');
+            }
+        }
+
+        function displayParticipants(participants) {
+            const list = document.getElementById('participants-list');
+            list.innerHTML = '';
+
+            participants.forEach((participant, index) => {
+                const div = document.createElement('div');
+                div.style.cssText = 'display: flex; gap: 10px; margin-bottom: 10px; align-items: center;';
+                div.innerHTML = `
+                    <input type="text" value="${participant.participant_name}"
+                           placeholder="Participant Name"
+                           style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px;"
+                           data-participant-id="${participant.name}">
+                    <select style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        <option value="Management" ${participant.team === 'Management' ? 'selected' : ''}>Management</option>
+                        <option value="Backend" ${participant.team === 'Backend' ? 'selected' : ''}>Backend</option>
+                        <option value="Frontend" ${participant.team === 'Frontend' ? 'selected' : ''}>Frontend</option>
+                        <option value="UI/UX" ${participant.team === 'UI/UX' ? 'selected' : ''}>UI/UX</option>
+                        <option value="Scrum" ${participant.team === 'Scrum' ? 'selected' : ''}>Scrum</option>
+                        <option value="DevOps" ${participant.team === 'DevOps' ? 'selected' : ''}>DevOps</option>
+                        <option value="Security" ${participant.team === 'Security' ? 'selected' : ''}>Security</option>
+                        <option value="QA" ${participant.team === 'QA' ? 'selected' : ''}>QA</option>
+                    </select>
+                    <button onclick="this.parentElement.remove()"
+                            style="padding: 8px 12px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                        Remove
+                    </button>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        function addParticipantRow() {
+            const list = document.getElementById('participants-list');
+            const div = document.createElement('div');
+            div.style.cssText = 'display: flex; gap: 10px; margin-bottom: 10px; align-items: center;';
+            div.innerHTML = `
+                <input type="text" placeholder="Participant Name"
+                       style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                <select style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    <option value="">Select Team</option>
+                    <option value="Management">Management</option>
+                    <option value="Backend">Backend</option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="UI/UX">UI/UX</option>
+                    <option value="Scrum">Scrum</option>
+                    <option value="DevOps">DevOps</option>
+                    <option value="Security">Security</option>
+                    <option value="QA">QA</option>
+                </select>
+                <button onclick="this.parentElement.remove()"
+                        style="padding: 8px 12px; background: #dc2626; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                    Remove
+                </button>
+            `;
+            list.appendChild(div);
+        }
+
+        function closeParticipantModal() {
+            document.getElementById('participant-modal').style.display = 'none';
+        }
+
+        async function saveParticipants() {
+            const list = document.getElementById('participants-list');
+            const rows = list.children;
+            const participants = [];
+
+            for (let row of rows) {
+                const nameInput = row.querySelector('input[type="text"]');
+                const teamSelect = row.querySelector('select');
+                const participantId = nameInput.dataset.participantId;
+
+                if (nameInput.value.trim() && teamSelect.value) {
+                    participants.push({
+                        id: participantId || null,
+                        name: nameInput.value.trim(),
+                        team: teamSelect.value
+                    });
+                }
+            }
+
+            if (participants.length === 0) {
+                alert('Please add at least one participant');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/method/fun_and_games.fun_and_games.api.update_session_participants', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        session_id: activeSession.name,
+                        participants: participants
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.message && data.message.success) {
+                    showMessage('Participants updated successfully!', 'success');
+                    closeParticipantModal();
+                    loadActiveSession(); // Refresh session data
+                } else {
+                    showMessage(data.message?.message || 'Failed to update participants', 'error');
+                }
+            } catch (error) {
+                console.error('Error updating participants:', error);
+                showMessage('Failed to update participants', 'error');
+            }
         }
 
         function openResultsPage() {

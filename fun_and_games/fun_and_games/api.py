@@ -353,6 +353,34 @@ def start_session(session_id):
 
 
 @frappe.whitelist(allow_guest=True)
+def reactivate_session(session_id):
+    """Reactivate a completed session by resetting votes and setting it as active"""
+    try:
+        # Deactivate all other sessions
+        frappe.db.sql(
+            "UPDATE `tabGame Session` SET status = 'Completed' WHERE status = 'Active'"
+        )
+
+        # Reset all votes for this session
+        frappe.db.sql("DELETE FROM `tabGame Vote` WHERE session = %s", [session_id])
+
+        # Reset question completion status for this session
+        frappe.db.sql(
+            "UPDATE `tabSession Question` SET is_completed = 0 WHERE session = %s",
+            [session_id],
+        )
+
+        # Activate this session
+        frappe.db.set_value("Game Session", session_id, "status", "Active")
+        frappe.db.commit()
+
+        return {"success": True, "message": "Session reactivated successfully"}
+    except Exception as e:
+        frappe.log_error(f"Error in reactivate_session: {str(e)}")
+        return {"success": False, "message": "Error reactivating session"}
+
+
+@frappe.whitelist(allow_guest=True)
 def get_cumulative_results(session_id=None):
     """Returns cumulative vote tallies for a session or active session"""
     try:
@@ -644,3 +672,57 @@ def clear_expired_question(session_id):
     except Exception as e:
         frappe.log_error(f"Error in clear_expired_question: {str(e)}")
         return {"success": False, "message": "Failed to clear expired question"}
+
+
+@frappe.whitelist(allow_guest=True)
+def reset_entire_session(session_id):
+    """Reset entire session - clear all votes and current question"""
+    try:
+        # Delete all votes for this session
+        frappe.db.sql("DELETE FROM `tabGame Vote` WHERE session = %s", (session_id,))
+
+        # Reset session state
+        session_doc = frappe.get_doc("Game Session", session_id)
+        session_doc.current_question = None
+        session_doc.question_start_time = None
+        session_doc.voting_deadline = None
+        session_doc.save()
+
+        frappe.db.commit()
+
+        return {"success": True, "message": "Session reset successfully"}
+
+    except Exception as e:
+        frappe.log_error(f"Error in reset_entire_session: {str(e)}")
+        return {"success": False, "message": "Failed to reset session"}
+
+
+@frappe.whitelist(allow_guest=True)
+def update_session_participants(session_id, participants):
+    """Update participants for a session"""
+    try:
+        # Delete existing participants
+        frappe.db.sql(
+            "DELETE FROM `tabSession Participant` WHERE session = %s", (session_id,)
+        )
+
+        # Add new participants
+        for i, participant in enumerate(participants):
+            session_participant = frappe.get_doc(
+                {
+                    "doctype": "Session Participant",
+                    "session": session_id,
+                    "participant_name": participant["name"],
+                    "team": participant["team"],
+                    "display_order": i + 1,
+                }
+            )
+            session_participant.insert(ignore_permissions=True)
+
+        frappe.db.commit()
+
+        return {"success": True, "message": "Participants updated successfully"}
+
+    except Exception as e:
+        frappe.log_error(f"Error in update_session_participants: {str(e)}")
+        return {"success": False, "message": "Failed to update participants"}
