@@ -318,7 +318,7 @@ def reset_session_votes(session_id, question_id=None):
         return {"success": False, "message": "An error occurred while resetting votes"}
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_session_list():
     """Get list of all sessions for admin"""
     try:
@@ -521,7 +521,7 @@ def get_session_questions(session_id):
         return {"success": False, "message": "Error fetching session questions"}
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_session_participants(session_id):
     """Get participants in a session"""
     try:
