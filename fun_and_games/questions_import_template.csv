@@ -1,0 +1,96 @@
+question_text,category,is_active,for_backend_track,for_frontend_track,for_leadership_track,for_custom_sessions
+"Who is most likely to work through lunch without noticing?",Work Habits,1,1,1,0,1
+"Who is most likely to have 47 browser tabs open at once?",Work Habits,1,1,1,0,1
+"Who is most likely to organize their code like they organize their life?",Personality,1,1,1,0,1
+"Who is most likely to arrive early and stay late without being asked?",Work Habits,1,0,0,1,1
+"Who is most likely to turn a 5-minute standup into a 30-minute discussion?",Teamwork,1,0,0,1,1
+"Who is most likely to have the cleanest desk in the office?",Personality,1,0,0,1,1
+"Who is most likely to remember everyone's birthday?",Personality,1,0,0,1,1
+"Who is most likely to solve a problem by restarting their computer?",Technical,1,1,1,0,1
+"Who is most likely to have strong opinions about code formatting?",Professional,1,1,0,0,1
+"Who is most likely to write documentation that others actually read?",Professional,1,1,0,0,1
+"Who is most likely to find a bug in production at 2 AM?",Technical,1,1,0,0,1
+"Who is most likely to optimize code that already works perfectly?",Technical,1,1,0,0,1
+"Who is most likely to name their variables after food items?",Creative,1,1,1,0,1
+"Who is most likely to have a rubber duck on their desk for debugging?",Fun,1,1,0,0,1
+"Who is most likely to refuse to use Internet Explorer even for testing?",Professional,1,0,1,0,1
+"Who is most likely to spend an hour perfecting a CSS animation?",Creative,1,0,1,0,1
+"Who is most likely to have strong opinions about which JavaScript framework is best?",Professional,1,0,1,0,1
+"Who is most likely to test their website on every possible device?",Professional,1,0,1,0,1
+"Who is most likely to create a beautiful design that breaks on mobile?",Creative,1,0,1,0,1
+"Who is most likely to use Comic Sans in a professional presentation?",Fun,1,0,1,0,1
+"Who is most likely to delegate tasks effectively?",Leadership,1,0,0,1,1
+"Who is most likely to give constructive feedback?",Leadership,1,0,0,1,1
+"Who is most likely to mediate conflicts between team members?",Leadership,1,0,0,1,1
+"Who is most likely to take initiative on new projects?",Leadership,1,0,0,1,1
+"Who is most likely to mentor junior team members?",Leadership,1,0,0,1,1
+"Who is most likely to make data-driven decisions?",Leadership,1,0,0,1,1
+"Who is most likely to bring snacks for the whole team?",Teamwork,1,1,1,1,1
+"Who is most likely to help others debug their code?",Teamwork,1,1,1,0,1
+"Who is most likely to volunteer for the difficult tasks?",Teamwork,1,1,1,1,1
+"Who is most likely to share useful articles with the team?",Teamwork,1,1,1,1,1
+"Who is most likely to organize team building activities?",Teamwork,1,0,0,1,1
+"Who is most likely to remember to update the team chat?",Teamwork,1,1,1,1,1
+"Who is most likely to have the most creative solution to a problem?",Creative,1,1,1,1,1
+"Who is most likely to think outside the box?",Creative,1,1,1,1,1
+"Who is most likely to come up with innovative features?",Creative,1,1,1,1,1
+"Who is most likely to design something beautiful and functional?",Creative,1,0,1,0,1
+"Who is most likely to find a creative workaround for a technical limitation?",Creative,1,1,1,0,1
+"Who is most likely to suggest using a new technology?",Creative,1,1,1,0,1
+"Who is most likely to work late into the night?",Work Habits,1,1,1,1,1
+"Who is most likely to be the first one in the office?",Work Habits,1,1,1,1,1
+"Who is most likely to take the shortest lunch breaks?",Work Habits,1,1,1,1,1
+"Who is most likely to work on weekends?",Work Habits,1,1,1,1,1
+"Who is most likely to check emails after hours?",Work Habits,1,0,0,1,1
+"Who is most likely to have the most organized workspace?",Work Habits,1,1,1,1,1
+"Who is most likely to be the life of the office party?",Fun,1,1,1,1,1
+"Who is most likely to tell the best jokes during meetings?",Fun,1,1,1,1,1
+"Who is most likely to have the funniest Slack reactions?",Fun,1,1,1,1,1
+"Who is most likely to start a dance party in the office?",Fun,1,1,1,1,1
+"Who is most likely to bring board games to work?",Fun,1,1,1,1,1
+"Who is most likely to have the best memes?",Fun,1,1,1,1,1
+"Who is most likely to know all the keyboard shortcuts?",Technical,1,1,1,0,1
+"Who is most likely to have the most GitHub commits?",Technical,1,1,0,0,1
+"Who is most likely to write the most comprehensive tests?",Technical,1,1,0,0,1
+"Who is most likely to catch bugs before they reach production?",Technical,1,1,1,0,1
+"Who is most likely to refactor code for better performance?",Technical,1,1,0,0,1
+"Who is most likely to automate repetitive tasks?",Technical,1,1,0,0,1
+"Who is most likely to give the best code reviews?",Professional,1,1,1,0,1
+"Who is most likely to follow coding standards religiously?",Professional,1,1,1,0,1
+"Who is most likely to attend every conference and meetup?",Professional,1,1,1,1,1
+"Who is most likely to have the most certifications?",Professional,1,1,1,1,1
+"Who is most likely to read technical blogs in their free time?",Professional,1,1,1,0,1
+"Who is most likely to contribute to open source projects?",Professional,1,1,1,0,1
+"Who is most likely to be calm under pressure?",Personality,1,1,1,1,1
+"Who is most likely to be the most optimistic?",Personality,1,1,1,1,1
+"Who is most likely to be the most detail-oriented?",Personality,1,1,1,1,1
+"Who is most likely to be the most patient?",Personality,1,1,1,1,1
+"Who is most likely to be the most curious?",Personality,1,1,1,1,1
+"Who is most likely to be the most reliable?",Personality,1,1,1,1,1
+"Who is most likely to become a tech lead?",Leadership,1,1,1,0,1
+"Who is most likely to start their own company?",Leadership,1,1,1,1,1
+"Who is most likely to become a CTO?",Leadership,1,1,0,1,1
+"Who is most likely to lead a major project successfully?",Leadership,1,1,1,1,1
+"Who is most likely to inspire others to do their best work?",Leadership,1,0,0,1,1
+"Who is most likely to make tough decisions when needed?",Leadership,1,0,0,1,1
+"Who is most likely to have the best work-life balance?",Work Habits,1,1,1,1,1
+"Who is most likely to take the most vacation days?",Work Habits,1,1,1,1,1
+"Who is most likely to never miss a deadline?",Work Habits,1,1,1,1,1
+"Who is most likely to be the most punctual?",Work Habits,1,1,1,1,1
+"Who is most likely to have the most productive mornings?",Work Habits,1,1,1,1,1
+"Who is most likely to multitask effectively?",Work Habits,1,1,1,1,1
+"Who is most likely to win a hackathon?",Technical,1,1,1,0,1
+"Who is most likely to build something amazing in their spare time?",Creative,1,1,1,0,1
+"Who is most likely to have the most side projects?",Creative,1,1,1,0,1
+"Who is most likely to learn a new programming language this year?",Professional,1,1,1,0,1
+"Who is most likely to give a TED talk about technology?",Professional,1,1,1,1,1
+"Who is most likely to write a technical book?",Professional,1,1,0,0,1
+"Who is most likely to have the best debugging skills?",Technical,1,1,0,0,1
+"Who is most likely to solve the impossible bug?",Technical,1,1,0,0,1
+"Who is most likely to write code that never needs debugging?",Technical,1,1,0,0,1
+"Who is most likely to create the most user-friendly interface?",Creative,1,0,1,0,1
+"Who is most likely to have the best eye for design?",Creative,1,0,1,0,1
+"Who is most likely to make the app look amazing?",Creative,1,0,1,0,1
+"Who is most likely to care most about user experience?",Professional,1,0,1,0,1
+"Who is most likely to test every edge case?",Professional,1,0,1,0,1
+"Who is most likely to make the website load faster?",Technical,1,0,1,0,1

@@ -2,7 +2,7 @@
   {
     "question_text": "Who is most likely to have a mechanical keyboard that can be heard from space?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -11,7 +11,7 @@
   {
     "question_text": "Who is most likely to have more GitHub repos than friends?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -20,7 +20,7 @@
   {
     "question_text": "Who is most likely to name their pet after a programming language?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -29,7 +29,7 @@
   {
     "question_text": "Who is most likely to argue that their bug is actually a feature?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -38,7 +38,7 @@
   {
     "question_text": "Who is most likely to have their IDE theme darker than their soul?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -47,7 +47,7 @@
   {
     "question_text": "Who is most likely to solve problems while in the shower?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -56,7 +56,7 @@
   {
     "question_text": "Who is most likely to have memorized more keyboard shortcuts than phone numbers?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -65,7 +65,7 @@
   {
     "question_text": "Who is most likely to dream in code?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -74,7 +74,7 @@
   {
     "question_text": "Who is most likely to explain their weekend plans using technical jargon?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -83,7 +83,7 @@
   {
     "question_text": "Who is most likely to have a collection of rubber ducks on their desk?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -407,7 +407,7 @@
   {
     "question_text": "Who is most likely to have the most aesthetically pleasing workspace?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -416,8 +416,8 @@
   {
     "question_text": "Who is most likely to judge fonts like wine?",
     "is_active": 1,
-    "for_leadership_track": 0,
-    "for_backend_track": 0,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
     "category": "Fun"
@@ -425,8 +425,8 @@
   {
     "question_text": "Who is most likely to notice when something is 1 pixel off?",
     "is_active": 1,
-    "for_leadership_track": 0,
-    "for_backend_track": 0,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
     "category": "Fun"
@@ -434,8 +434,8 @@
   {
     "question_text": "Who is most likely to have strong opinions about button corner radius?",
     "is_active": 1,
-    "for_leadership_track": 0,
-    "for_backend_track": 0,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
     "category": "Fun"
@@ -443,8 +443,8 @@
   {
     "question_text": "Who is most likely to own the most design books?",
     "is_active": 1,
-    "for_leadership_track": 0,
-    "for_backend_track": 0,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
     "category": "Fun"
@@ -452,8 +452,8 @@
   {
     "question_text": "Who is most likely to redesign everything they touch?",
     "is_active": 1,
-    "for_leadership_track": 0,
-    "for_backend_track": 0,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
     "category": "Creative"
@@ -767,7 +767,7 @@
   {
     "question_text": "Who is most likely to have the newest gadgets and tools?",
     "is_active": 1,
-    "for_leadership_track": 0,
+    "for_leadership_track": 1,
     "for_backend_track": 1,
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
@@ -799,6 +799,266 @@
     "for_frontend_track": 1,
     "for_custom_sessions": 1,
     "category": "Professional"
+  },
+  {
+    "question_text": "Who is most likely to break production on a Friday evening?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to live off coffee and energy drinks?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to forget they\u2019re still muted on a call?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to join a meeting from bed?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to have a meme folder organized by categories?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to forget what day it is while coding?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to start a sentence with 'technically\u2026'?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to turn a bug into a full-on conspiracy theory?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to turn their commit messages into jokes?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to answer Stack Overflow questions during work hours?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to drop food on their keyboard?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to rename variables to funny names?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to send memes in the middle of serious discussions?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to forget their laptop charger?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to start a side hustle?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to laugh the loudest during meetings?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to start singing out of nowhere?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to invent a funny office tradition?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to bring snacks for everyone?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to accidentally send a message to the wrong chat group?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to forget their password often?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to start a debate about tabs vs spaces?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to use too many emojis in Slack messages?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to misplace their phone during the day?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to win a dance-off at a company party?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to make everyone laugh during presentations?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to survive on instant noodles?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to break out into random trivia facts?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
+  },
+  {
+    "question_text": "Who is most likely to be caught napping at their desk?",
+    "is_active": 1,
+    "for_leadership_track": 1,
+    "for_backend_track": 1,
+    "for_frontend_track": 1,
+    "for_custom_sessions": 1,
+    "category": "Fun"
   }
-
 ]
