@@ -18,6 +18,29 @@ Tiberbu Games is an interactive team building application that creates engaging 
 
 ## ✨ Key Features
 
+## 📸 Screenshots
+
+### 🏆 TIBERBU Champions - Results Display
+![TIBERBU Champions Results](screenshots/Champions.png)
+
+*Beautiful trophy podium showing top performers with vote counts and percentages. Perfect for revealing winners during your event!*
+
+### 🗳️ TIBERBU Games - Voting Interface
+![TIBERBU Games Voting](screenshots/VotingPage.png)
+
+*Clean, intuitive voting interface with clear question display, vote confirmation, and refresh functionality. Users can easily cast their votes and see confirmation.*
+
+### 📊 Live Results Dashboard
+![Live Results](screenshots/LiveResults.png)
+
+*Real-time voting results with dynamic updates as votes come in during the session.*
+
+### ⚙️ Admin Control Panel
+![Admin Panel](screenshots/AdminPanel2.png)
+
+*Comprehensive admin interface for managing sessions, questions, and participants.*
+
+
 ### 🎪 **Interactive Voting Experience**
 - **One-click voting** - Simple, intuitive interface with clear options
 - **✅ Vote confirmation** - Green checkmark and "You have already voted" notification
@@ -126,28 +149,6 @@ Get ready for questions like:
 3. **Create sessions** with your team members
 4. **Share the voting link** with participants
 5. **Start playing** and watch the fun unfold!
-
-## 📸 Screenshots
-
-### 🏆 TIBERBU Champions - Results Display
-![TIBERBU Champions Results](screenshots/Champions.png)
-
-*Beautiful trophy podium showing top performers with vote counts and percentages. Perfect for revealing winners during your event!*
-
-### 🗳️ TIBERBU Games - Voting Interface
-![TIBERBU Games Voting](screenshots/VotingPage.png)
-
-*Clean, intuitive voting interface with clear question display, vote confirmation, and refresh functionality. Users can easily cast their votes and see confirmation.*
-
-### 📊 Live Results Dashboard
-![Live Results](screenshots/LiveResults.png)
-
-*Real-time voting results with dynamic updates as votes come in during the session.*
-
-### ⚙️ Admin Control Panel
-![Admin Panel](screenshots/AdminPanel2.png)
-
-*Comprehensive admin interface for managing sessions, questions, and participants.*
 
 ## 🎯 Perfect for Your Next Event!
 
